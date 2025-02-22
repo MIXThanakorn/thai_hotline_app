@@ -45,7 +45,7 @@ class _SubDIntroductionCallUIState extends State<SubDIntroductionCallUI> {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            Text("Bank\nHotline",
+            Text("Utility\nHotline",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
           ],

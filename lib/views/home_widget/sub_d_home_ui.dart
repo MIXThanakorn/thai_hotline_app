@@ -78,7 +78,7 @@ class _SubDHomeUIState extends State<SubDHomeUI> {
                   height: MediaQuery.of(context).size.height * 0.025,
                 ),
                 Text(
-                  "Emergency Hotline",
+                  "Utility Hotline",
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

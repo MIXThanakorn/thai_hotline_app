@@ -102,7 +102,7 @@ class _SubCHomeUIState extends State<SubCHomeUI> {
                   height: MediaQuery.of(context).size.height * 0.025,
                 ),
                 Text(
-                  "Emergency Hotline",
+                  "Bank Hotline",
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
