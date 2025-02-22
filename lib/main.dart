@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:thai_hotline_app/views/introduction_call_ui.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
   runApp(const ThaiHotlineApp());
 }
 
@@ -17,6 +21,8 @@ class _ThaiHotlineAppState extends State<ThaiHotlineApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false, home: IntroductionCallUI());
+        debugShowCheckedModeBanner: false,
+        home: IntroductionCallUI(),
+        theme: ThemeData(textTheme: GoogleFonts.acmeTextTheme()));
   }
 }

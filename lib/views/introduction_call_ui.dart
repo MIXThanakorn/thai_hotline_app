@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:thai_hotline_app/views/home_ui.dart';
+import 'package:thai_hotline_app/views/introduction_widget/sub_a_introduction_call_ui.dart';
+import 'package:thai_hotline_app/views/introduction_widget/sub_b_introduction_call_ui.dart';
+import 'package:thai_hotline_app/views/introduction_widget/sub_c_introduction_call_ui.dart';
+import 'package:thai_hotline_app/views/introduction_widget/sub_d_introduction_call_ui.dart';
 
 class IntroductionCallUI extends StatefulWidget {
   const IntroductionCallUI({super.key});
@@ -15,65 +19,33 @@ class _IntroductionCallUIState extends State<IntroductionCallUI> {
     return Scaffold(
       body: IntroductionScreen(
         pages: [
-          PageViewModel(
-            titleWidget: Text.rich(
-              TextSpan(
-                  text: "When having to travel in the city Leave the provinces"
-                      "\nHow close or far will it be?"
-                      "\nAsk about travel and"
-                      "\ntraffic information. expressway,"
-                      "\nmain road, secondary road"
-                      "\nRoute to avoid traffic jams"
-                      "\nInformation on buses,trains,BTS, MRT"
-                      "\nwhy are you delaying  ",
-                  children: [
-                    TextSpan(
-                        text: "Call now!!",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Colors.red,
-                        ))
-                  ],
-                  style: TextStyle(fontSize: 13)),
-              textAlign: TextAlign.center,
-            ),
-            bodyWidget: Text.rich(
-              TextSpan(
-                  text: "Travel"
-                      "\nHotline",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              textAlign: TextAlign.center,
-            ),
-            image: Image.asset(
-              "assets/images/intro_img01.jpg",
-              width: MediaQuery.of(context).size.width * 0.8,
-            ),
-          ),
+          PageViewModel(title: '', bodyWidget: SubAIntroductionCallUI()),
+          PageViewModel(title: '', bodyWidget: SubBIntroductionCallUI()),
+          PageViewModel(title: '', bodyWidget: SubCIntroductionCallUI()),
+          PageViewModel(title: '', bodyWidget: SubDIntroductionCallUI()),
         ],
         showSkipButton: true,
         skip: Text(
           "Skip",
         ),
         dotsDecorator: DotsDecorator(
-          size: const Size.square(10.0),
-          activeSize: const Size(20.0, 10.0),
+          size: const Size.square(20.0),
+          activeSize: const Size(20.0, 20.0),
           activeColor: Theme.of(context).colorScheme.secondary,
-          color: Colors.black26,
-          spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+          color: const Color.fromARGB(255, 175, 175, 175),
+          spacing: const EdgeInsets.symmetric(horizontal: 4.0),
           activeShape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         ),
         showDoneButton: true,
         done: Text(
-          "Done",
+          "Call now",
         ),
         showNextButton: true,
-        next: Text(
-          "Next",
-        ),
+        next: Icon(Icons.arrow_forward_ios_outlined),
         onDone: () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => HomeUI())),
-        scrollPhysics: ScrollPhysics(parent: BouncingScrollPhysics()),
+        scrollPhysics: BouncingScrollPhysics(),
       ),
     );
   }
