@@ -6,8 +6,12 @@ import 'package:flutter/services.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
-  ));
-  runApp(const ThaiHotlineApp());
+  )); //transparent status bar color
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(ThaiHotlineApp())); //make it can't flip
 }
 
 class ThaiHotlineApp extends StatefulWidget {
